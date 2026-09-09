@@ -1,0 +1,7 @@
+<<<<<<< HEAD
+#!/usr/bin/bash
+python runner.py $1
+=======
+#!/usr/bin/env bash
+exec python3 "$(dirname "$0")/runner.py" "$@"
+>>>>>>> upstream/main
