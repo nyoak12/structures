@@ -6,16 +6,33 @@ from pprint import pprint
 # \d means any zero or more digits
 # \ means followed by
 #
+
+#RULES
+# =====
+# r"...." means a raw string 
+# \ back slash -> python ignores , regex picks up
+# \s -> any whitespace char (space tab newline)
+# \d -> any digit 0-9
+# + -> one or more of the thing before it
+# * -> zero or more of the thing before it
+# ? -> zero or one of the thing before it
+# \. -> a literal 
+# . -> any single character except newline
+# | -> alternation
+# \+ \* \( \) -> escaped metacharacters
+# general rules -> list order matters thats why error is last -> alternation is first matched left to right
+#
 patterns = [
     (r"\s+", "whitespace"),
-    (r"\d*\.\d+|\d+\.\d*|\d+", "number"),
+    (r"\d*\.\d+|\d+\.\d*|\d+", "number"), #float version one or float version 2 or int
     (r"\+", "+"),
     (r"\-", "-"),
     (r"\/", "/"),
+    (r"\%", "%"),
     (r"\*", "*"),
     (r"\(", "("),
     (r"\)", ")"),
-    (r".", "error"), # "." this means anything
+    (r".", "error"),
 ]
 
 #list comprehension
